@@ -7,11 +7,15 @@ const propTypes = {
 }
 
 class TodoList extends Component {
+
+    //see passing the prop all the way up. think i did do like this
+    //in angular...
+
     render(){
         //all js in render but before return
         //console.log(this.props.todos)
         return this.props.todos.map((todo) => (
-            <TodoItem key={todo.id} todo = {todo} />
+            <TodoItem deleteTodo = {this.props.deleteTodo} key={todo.id} markAchieved = {this.props.markAchieved} todo = {todo}  />
         ));
     }
 }
